@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+:root {
+  --font-base: "DM Sans", sans-serif;
+  --primary-color: #f8f6f2;
+  /* else use edf2f8 as primary */
+  --secondary-color: #d4c8af;
+  --blue-color: #313bac;
+  --popup-color: #E2DACA;
+  --black-color: #030303;
+  --light-gray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+  --white-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-color);
+}
+
+.head-text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--black-color);
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 2000px) {
+  .head-text {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .head-text {
+    font-size: 2rem;
+  }
+}
