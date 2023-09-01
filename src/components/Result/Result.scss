@@ -1,0 +1,75 @@
+.result__main {
+    flex-direction: column;
+
+    .result__score {
+        height: 5rem;
+        background-color: rebeccapurple;
+        width: 100%;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        background-color: #03e5b7;
+        background-image: linear-gradient(315deg, #03e5b7 0%, #037ade 74%);
+    }
+
+    .result__details {
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        .result__card {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            width: 60%;
+            padding: 1rem;
+            margin: 1rem;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0,0.1);
+        }
+    }
+}
+
+.result__card {
+   .result__question {
+        text-align: left;
+        font-weight: 500;
+   }
+   .options {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+
+        li {
+            margin: 0.5rem;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            flex-direction: row !important;
+            list-style: none;
+
+            .optionIcon {
+                margin: 0.5rem;
+            }
+
+            .result__status {
+                padding: 3px 10px;
+                border-radius: 20px;
+                font-size: 0.7rem;
+                margin-left: 0.5rem;
+            }
+
+            .status-success {
+                background-color: rgb(109, 255, 109);
+            }
+
+            .status-failure {
+                background-color: rgb(255, 123, 123);
+            }
+        }
+    }
+}

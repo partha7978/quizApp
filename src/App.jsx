@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar, Popup, Question, QuestionBar } from "./components";
+import { Navbar, Popup, Question, Result } from "./components";
 
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -17,6 +17,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/question" element={<Question />} />
+          </Routes>
+          <Routes>
+            <Route path="/result" element={<Result />} />
           </Routes>
         </BrowserRouter>
       </Provider>
