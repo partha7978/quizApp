@@ -9,6 +9,7 @@
     padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     .question__number-button {
       padding: 1rem;
@@ -59,6 +60,10 @@
         li {
           list-style: none;
         }
+      }
+
+      @media screen and (max-width: 650px) {
+        width: 90%;
       }
     }
   }

@@ -3,11 +3,31 @@ import Box from "@mui/material/Box";
 import "./Result.scss";
 import { BiRightArrowCircle } from "react-icons/bi"
 
-import { useSelector } from "react-redux/es/hooks/useSelector";
+// import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setQuestionsPlusAns } from "../../store/resultSlice";
 
 const Result = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const result = useSelector((state) => state.result);
-  console.log(result)
+  // console.log(result)
+
+  //reloding the data if user clicked back button
+  window.onpopstate=function()
+  {
+    
+    const status = confirm("Back/Forward clicked!");
+    if(status) {
+      navigate(`/`);
+      location.reload();
+    }
+    else {
+      navigate(`/result`);
+    }
+
+  }
   return (
     <Box className="d-flex result__main">
       <div className="result__score d-flex">Your Scored {result.length} out of 15</div>
@@ -33,7 +53,7 @@ const Result = () => {
               ))}
             </div>
 
-            <p>Correct Answer : {item[0].selectedAnswer}</p>
+            <p className="correctAns">Correct Answer : {item[0].selectedAnswer}</p>
           </Box>
         ))}
       </div>
