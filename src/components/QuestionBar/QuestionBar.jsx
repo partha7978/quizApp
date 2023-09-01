@@ -1,8 +1,12 @@
 import React from 'react'
-
-const QuestionBar = () => {
+import PropTypes from 'prop-types';
+const QuestionBar = (props) => {
   return (
-    <div>QuestionBar</div>
+    <div className='questionbar__container'>
+      {props.mainQuestion?.map((item, id) => (
+        <button key={id}>{item.isTrue}</button>
+      ))}
+    </div>
   )
 }
 
