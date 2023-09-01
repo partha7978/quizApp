@@ -14,6 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setQuestionsPlusAns } from "../../store/resultSlice";
 import { startTimer, stopTimer } from "../../store/timerSlice";
 
+import { motion } from "framer-motion";
+
 const Question = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,6 +27,16 @@ const Question = () => {
   const [submit, setSubmit] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answeredQuestion, setAnsweredQuestion] = useState(true);
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+
+  window.onload = function () {
+    const status = confirm(
+      "All the progress will be lost. Are you surely want to exit."
+    );
+    if(status) {
+      navigate(`/`);
+    }
+  };
 
   //function to fetch data
   const fetchQuestions = async () => {
@@ -41,7 +53,11 @@ const Question = () => {
     // console.log(mainQuestion[id], 'main')
     // console.log(currentQuestion, 'bef')
     setCurrentQuestion(mainQuestion[id]);
-    // console.log(currentQuestion, 'curr')
+    setAnimateCard([{ y: 50, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+    }, 500);
   };
 
   //to fetch questions.
@@ -107,7 +123,11 @@ const Question = () => {
 
           <div className="question__container">
             {currentQuestion && (
-              <Box className="question__card">
+              <motion.div
+                animate={animateCard}
+                transition={{ duration: 0.5, delayChildren: 0.5 }}
+                className="question__card"
+              >
                 <h4 className="question">
                   {`Q.${questionNum + 1}-` + currentQuestion.question}{" "}
                 </h4>
@@ -139,7 +159,7 @@ const Question = () => {
                 >
                   {selectedAnswer ? "Next" : "Skip"}
                 </button>
-              </Box>
+              </motion.div>
             )}
           </div>
         </>

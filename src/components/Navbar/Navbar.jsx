@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar__user">
-        <p>User {name.length>0 && name[0].split("@")[0] }</p>
+        <p>User <b> {name.length>0 && name[0].split("@")[0] } </b></p>
       </div>
     </>
   );
