@@ -25,24 +25,38 @@
 
 <br>
 
+## Program Structure and Processing
+
+I have created, 4 main components as ``` Navbar, Popup, Question, Result ```.
+
+* Inside Navbar,  contains the logo and a 30 minutes ``` Timer ``` component.
+* From the start, the ``` Popup ``` will show and ask for the email id.
+* After submission of the valid email, I have used react-router-dom, which will redirects to the ``` Question ``` page. 
+
+* In ```Question```, 15 questions will be shown. User have to answer the questions as well as user can submit the question at once. 
+
+* Once user submits the question, it will redirect to the ```Result``` page and then all the results will be shown by marking the correct answer, wrong answer. 
+
+* Here I have used redux-toolkit to manage the state globally and to avoid props drilling. 
+
 
 ## Installation
 
-Install world affairs on your local machine
+#### To Install Quiz app on your local machine, in your terminal write the below command. 
 
 ```bash
   git clone https://github.com/partha7978/quizApp.git
 
-  cd world-affairs
+  cd quizApp
 ```
 
-### After installing on your local machine, you have to install all the packages that are used in this project.
+#### After installing on your local machine, you have to install all the packages that are used in this project.
 
 ```bash
   npm install
 ``` 
 
-### To run this project on your local machine
+#### To run this project on your local machine
 
 ```bash
   npm start
